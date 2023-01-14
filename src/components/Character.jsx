@@ -7,7 +7,7 @@ const Character = (character) => {
                 className="rounded-lg w-full"
             />
             <h3 className='text-[#234bac] font-semibold text-[2rem]'>{character.name}</h3>
-            <p>Origin: {<span className='text-[#2ba] font-semibold'>${character.origin.name}</span>}</p>
+            <p>Origin: {<span className='text-[#2ba] font-semibold'>{character.origin.name}</span>}</p>
         </div>
     )
 }
