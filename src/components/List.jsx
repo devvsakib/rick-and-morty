@@ -1,19 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Character from './Character'
 
-const List = () => {
-    const [characters, setCharacters] = useState([])
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await fetch('https://rickandmortyapi.com/api/character')
-            const { results } = await data.json()
-            setCharacters(results)
-            setLoading(false)
-        }
-        fetchData()
-    }, [characters.length])
+const List = ({characters, loading}) => {
 
     return (
         <div className='w-[90vw] mx-auto'>
@@ -29,6 +17,12 @@ const List = () => {
                         ))
                     )
                 }
+                {/* {
+                    characters.map((ep, idx) => (
+                        ep.id === 1 ? ep["episode"].map((e) => { console.log(e) }) : null
+                    )
+                    )
+                } */}
             </div>
         </div>
     )
